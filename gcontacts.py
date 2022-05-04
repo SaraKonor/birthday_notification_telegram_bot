@@ -1,4 +1,5 @@
 import datetime
+import os
 
 from googleapiclient.discovery import build
 from httplib2 import Http
@@ -9,6 +10,10 @@ import config
 
 class GContacts:
     def __init__(self):
+        credFile = open('credentials.json', 'w')
+        credFile.write(config.CREDENTIALS)
+        credFile.close()
+
         store = file.Storage('token.json')
         creds = store.get()
         if not creds or creds.invalid:
