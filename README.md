@@ -18,12 +18,6 @@ Launch the app:
 $ pipenv run python main.py
 ~~~
 
-### VIP file
-
-When obtaining next birthdays a `vip.dat` file can be filled in with those *very important people* who we want to be aware of their birthdays from.
-
-The structure of this file is as simple as writing the **whole name (and surname)** of the person at each line.
-
 ### Telegram Bot
 
 It will be also necessary to create a **Telegram Bot** using [BotFather](https://telegram.me/BotFather). You will get an identifier (*token*) for your bot. Write this token into de configuration file.
@@ -32,7 +26,7 @@ You will need a **user identifier** of Telegram in order to the messages be deli
 
 ### Google Calendar API
 
-[Here](https://developers.google.com/calendar/quickstart/python) you can enable the Google Calendar API and obtain a `credentials.json` which will be located at root of the project.
+[Here](https://developers.google.com/calendar/quickstart/python) you can enable the Google Calendar API.
 
 ### Cron
 
