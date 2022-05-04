@@ -21,19 +21,44 @@ class GContacts:
         data = self.service.people().connections().list(
             resourceName='people/me',
             pageSize=2000,
-            personFields='names,birthdays,emailAddresses').execute()
+            personFields='names,birthdays,phoneNumbers,organizations').execute()
 
         self.contacts = {}
         for contact in data['connections']:
             if 'names' in contact.keys():
                 full_name = contact['names'][0]['displayName']
+                self.contacts[full_name] = {
+                    "phoneNumber": "",
+                    "title": "",
+                    "department": ""
+                }
+
                 if 'birthdays' in contact.keys():
                     birthday = contact['birthdays'][0]['date']
-                    self.contacts[full_name] = datetime.date(**birthday)
+                    self.contacts[full_name]['birthdate'] = datetime.date(**birthday)
+
+                if 'phoneNumbers' in contact.keys():
+                    self.contacts[full_name]['phoneNumber'] = contact['phoneNumbers'][0]['canonicalForm']
+
+                if 'organizations' in contact.keys():
+                    organization = contact['organizations'][0]
+                    self.contacts[full_name]['title'] = organization['title']
+                    
+                    if 'department' in organization.keys():
+                        self.contacts[full_name]['department'] = organization['department']
 
     def get_contact_age(self, contact_name):
-        birthdate = self.contacts.get(contact_name)
+        birthdate = self.contacts.get(contact_name)['birthdate']
         if birthdate is None:
             return -1
         delta = datetime.date.today() - birthdate
         return round(delta.days / 365)
+
+    def get_phone_number(self, contact_name):
+        return self.contacts.get(contact_name)['phoneNumber']
+
+    def get_title(self, contact_name):
+        return self.contacts.get(contact_name)['title']
+
+    def get_department(self, contact_name):
+        return self.contacts.get(contact_name)['department']
