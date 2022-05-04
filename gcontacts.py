@@ -13,11 +13,14 @@ class GContacts:
         credFile.write(config.CREDENTIALS)
         credFile.close()
 
+        tokenFile = open('token.json', 'w')
+        tokenFile.write(config.TOKEN)
+        tokenFile.close()
+
         store = file.Storage('token.json')
         creds = store.get()
         if not creds or creds.invalid:
-            flow = client.flow_from_clientsecrets('credentials.json',
-                                                  config.GOOGLE_API_SCOPES)
+            flow = client.flow_from_clientsecrets('credentials.json', config.GOOGLE_API_SCOPES)
             creds = tools.run_flow(flow, store)
         self.service = build('people', 'v1', http=creds.authorize(Http()))
 
