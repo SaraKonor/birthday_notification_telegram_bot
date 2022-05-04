@@ -9,6 +9,10 @@ import config
 
 class GCal:
     def __init__(self, calendar_id):
+        credFile = open('credentials.json', 'w')
+        credFile.write(config.CREDENTIALS)
+        credFile.close()
+        
         store = file.Storage('token.json')
         creds = store.get()
         if not creds or creds.invalid:
