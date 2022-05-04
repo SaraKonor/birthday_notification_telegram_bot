@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "45410a733ad2deef1834c2f01bcb7143315d2126772b5759a815bf4131addd69"
+            "sha256": "dd2183225c55bc1ca32b73f9818d9854f0eb3bfba10e413154d39f9953548629"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -45,13 +45,6 @@
             ],
             "markers": "python_version >= '3'",
             "version": "==2.0.12"
-        },
-        "docopt": {
-            "hashes": [
-                "sha256:49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
-            ],
-            "index": "pypi",
-            "version": "==0.6.2"
         },
         "google-api-core": {
             "hashes": [
@@ -115,13 +108,6 @@
             ],
             "index": "pypi",
             "version": "==4.1.3"
-        },
-        "prettyconf": {
-            "hashes": [
-                "sha256:2478d16bc2596c9863e93dd182ca70b71f636f0e169ab23288906c53147cfdbc"
-            ],
-            "index": "pypi",
-            "version": "==2.2.1"
         },
         "protobuf": {
             "hashes": [
@@ -194,7 +180,7 @@
                 "sha256:7bf433498c016c4314268d95df76c81b842a4cb2b276fa3312cfb1e1d85f6954",
                 "sha256:ef7b523f6356f763771559412c0d7134753f037822dad1b16945b7b846f7ad06"
             ],
-            "markers": "python_version > '3.0'",
+            "markers": "python_version >= '3.1'",
             "version": "==3.0.8"
         },
         "python-telegram-bot": {
@@ -249,7 +235,7 @@
                 "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
                 "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==1.16.0"
         },
         "tornado": {

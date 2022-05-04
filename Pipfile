@@ -5,10 +5,8 @@ name = "pypi"
 
 [packages]
 python-telegram-bot = "*"
-prettyconf = "*"
 google-api-python-client = "*"
 oauth2client = "*"
-docopt = "*"
 
 [dev-packages]
 
